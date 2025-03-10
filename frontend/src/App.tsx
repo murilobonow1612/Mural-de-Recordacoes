@@ -1,11 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import cartaImg from './assets/pictures/carta.png';
+import './assets/styles.css';
+import img_primeiro_oi from './assets/pictures/primeiroOi.png';
+import img_table from './assets/pictures/t.png';
+import img_corredor from './assets/pictures/corredor.png';
+import img_firstDate from './assets/pictures/1_encontro.png';
+import img_firstDate2 from './assets/pictures/1_encontro2.jpg';
+import img_pedido1 from './assets/pictures/pedido1.png';
+import img_pedido2 from './assets/pictures/pedido2.png';
+import img_pedido3 from './assets/pictures/pedido3.png';
+
+
 
 interface Evento {
   nome_evento: string;
   data_evento: string;
 }
 
-function App() {
+const App = () => {
   const [eventos, setEventos] = useState<Evento[]>([]);
   const [dataInicial1, setDataInicial1] = useState<Date | null>(null); // Primeiro oi
   const [dataInicial2, setDataInicial2] = useState<Date | null>(null); // Pedido namoro
@@ -23,7 +35,7 @@ function App() {
         setEventos(data);
         const eventoPrimeiroOi = data.find(evento => evento.nome_evento === 'primeiro_oi');
         const eventoPedidoNamoro = data.find(evento => evento.nome_evento === 'pedido_namoro');
-    
+
         if (eventoPrimeiroOi) {
           const dataPrimeiroOi = new Date(eventoPrimeiroOi.data_evento);
           console.log('Data do Primeiro Oi:', dataPrimeiroOi); // Verificar se a data está correta
@@ -39,7 +51,7 @@ function App() {
         console.error('Erro ao buscar eventos:', error);
       }
     };
-    
+
     fetchEventos();
   }, []);
 
@@ -106,12 +118,49 @@ function App() {
   }, [dataInicial1, dataInicial2]);
 
   return (
-    <div>
-      <h1>Mural de Recordações</h1>
-      <div id="contador1" dangerouslySetInnerHTML={{ __html: contador1 }}></div>
-      <div id="contador2" dangerouslySetInnerHTML={{ __html: contador2 }}></div>
-    </div>
-  );
+    <div className='divv'>
+      <body>
+        <img src={cartaImg} className="carta" />
+        <img src={img_primeiro_oi} className="primeiroOi"></img>
+        <div className="container">
+          <img src={img_table} id="table" />
+          <p id="contador"></p>
+        </div>
+        <p>No dia <strong>9 de Janeiro de 2025, às 14:46</strong> eu estava no intervalo do trabalho, sentado na calçada da
+          doca dos funcionários do shopping.</p>
+        <p> Você passou por mim, parou, olhou para trás e decidiu vir falar comigo. Essa decisão iria mudar as nossas
+          vidas
+          pra sempre.</p>
+
+
+        <div className="container_corredor_foto">
+          <img src={img_corredor} className="foto_corredor" />
+          <p>Nosso ponto de encontro de quando eu trabalhava no shopping </p>
+        </div>
+
+        <p>Primeiro encontro:</p>
+        <div className="_1_encontro">
+
+          <img src={img_firstDate} className="date" />
+          <img src={img_firstDate2} className="date" />
+        </div>
+
+
+        <p id='lbl_pedido_namoro'>pedido de namoro:</p>
+        <div className="pedido">
+          <img src={img_pedido1} id="pedidos"/>
+            <img src={img_pedido2} id="pedidos"/>
+              <img src={img_pedido3} id="pedidos"/>
+              </div>
+
+
+              <div id="contador1" dangerouslySetInnerHTML={{ __html: contador1 }}></div>
+              <div id="contador2" dangerouslySetInnerHTML={{ __html: contador2 }}></div>
+
+            </body>
+
+        </div>
+        );
 }
 
-export default App;
+        export default App;

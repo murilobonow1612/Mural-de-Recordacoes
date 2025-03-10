@@ -1,0 +1,191 @@
+body {
+    text-align: center;
+    margin-top: 50px;
+    background-color: #730100;
+    color: whitesmoke;
+    user-select: none;
+    font-family: 'f3b';
+    margin: 0;
+    font-size: 20px;
+    display: block;
+}
+
+.divv{
+    font-family: 'f3b';
+}
+
+@font-face {
+    font-family: 'f2';
+    src: url('./fonts/schoolbell.ttf') format('truetype'); /* Nome correto e formato */
+}
+
+@font-face {
+    font-family: 'f3b';
+    src: url('./fonts/BryndanWrite.ttf') format('truetype'); /* Nome correto e formato */
+}
+
+#contador1 {
+    font-size: 20px;
+}
+.carta{
+    max-width: 500px;
+    display: block;   /* Permite usar margin auto */
+    margin: 0 auto;   /* Centraliza horizontalmente */
+    width: 100%;
+}
+
+p{
+    margin: 30px;
+}
+
+.foto_corredor{
+    max-width: 250px;
+}
+
+.primeiroOi{
+    max-width: 300px;
+    display: block;   /* Permite usar margin auto */
+    margin: 0 auto;   /* Centraliza horizontalmente */
+    width: 100%;
+}
+
+#table{
+   width: 330px;
+    display: block;   /* Permite usar margin auto */
+    margin: 0 auto;   /* Centraliza horizontalmente */
+    margin-bottom: 100px;
+}
+
+.container {
+    position: relative; /* Define como referência para elementos filhos */
+    display: inline-block; /* Mantém o tamanho da imagem */
+    width: 400px; /* Mesmo tamanho da imagem */
+    margin: 0 auto; /* Centraliza na tela */
+}
+
+#contador {
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza ho rizontalmente */
+    transform: translate(-70%, -65%); /* Ajuste fino */
+    font-size: 24px;
+    color: rgb(0, 0, 0); /* Ajuste a cor conforme a imagem */
+}
+
+
+._1_encontro{
+    display: inline-block;
+    margin: 0 auto;
+}
+
+#lbl_pedido_namoro{
+    margin-top: 100px;
+}
+
+#pedidos{
+    max-width: 196px;
+    margin: 0 auto;
+}
+
+.pedido{
+    display:inline-block;
+}
+
+.container_corredor_foto{
+    display: inline-flex;
+
+}
+
+.container_corredor_foto p{
+    margin-left: -50px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.date{
+    max-width: 195px;
+    margin: 0 auto;
+}
+
+
+.cinema1{
+  max-width: 196px;
+  margin: 0 auto;
+}
+
+
+
+#contador2{
+  color: rgb(0, 0, 0);
+  font-size: 24px;
+  transform: translateY(-810px);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* From Uiverse.io by FWDJc */ 
+.loader {
+    width: 7em;
+    height: 5em;
+    position: relative;
+    animation: beat 1s infinite;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    margin-top: 100px;
+  }
+  
+  .loader::before,
+  .loader::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    border-radius: 5em 5em 0 0;
+    animation: coldblue 1s infinite;
+  }
+  
+  .loader::before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+  }
+  
+  .loader::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+  }
+  
+  @keyframes beat {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(1.2);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes coldblue {
+    0%, 100% {
+      background-color: rgb(255, 255, 255);
+    }
+  
+    50% {
+      background-color: rgb(198, 23, 23);
+    }
+  }
