@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './assets/styles.css';
 import images from './assets/images';
 
@@ -8,7 +8,7 @@ interface Evento {
 }
 
 const App = () => {
-  const [eventos, setEventos] = useState<Evento[]>([]);
+  const [_, setEventos] = useState<Evento[]>([]);
   const [dataInicial1, setDataInicial1] = useState<Date | null>(null); // Primeiro oi
   const [dataInicial2, setDataInicial2] = useState<Date | null>(null); // Pedido namoro
   const [contador1, setContador1] = useState<string>('Carregando...');
@@ -70,14 +70,11 @@ const App = () => {
     if (!dataInicial) return;
 
     const agora = new Date();
-    let diferencaMs = agora - dataInicial;
+    let diferencaMs = new Date().getTime() - dataInicial.getTime();
 
     if (diferencaMs < 0) return "A data ainda não chegou!";
 
     const { anos, meses, dias } = calcularDiferenca(dataInicial, agora);
-    const diasTotais = Math.floor(diferencaMs / (1000 * 60 * 60 * 24));
-    const semanasTotais = Math.floor(diasTotais / 7);
-    const semanas = semanasTotais % 4;
 
     const horas = Math.floor(diferencaMs / (1000 * 60 * 60)) % 24;
     const minutos = Math.floor(diferencaMs / (1000 * 60)) % 60;
@@ -90,14 +87,11 @@ const App = () => {
     if (!dataInicial) return;
 
     const agora = new Date();
-    let diferencaMs = agora - dataInicial;
+    let diferencaMs = new Date().getTime() - dataInicial.getTime();
 
     if (diferencaMs < 0) return "A data ainda não chegou!";
 
     const { anos, meses, dias } = calcularDiferenca(dataInicial, agora);
-    const diasTotais = Math.floor(diferencaMs / (1000 * 60 * 60 * 24));
-    const semanasTotais = Math.floor(diasTotais / 7);
-    const semanas = semanasTotais % 4;
 
     const horas = Math.floor(diferencaMs / (1000 * 60 * 60)) % 24;
     const minutos = Math.floor(diferencaMs / (1000 * 60)) % 60;
@@ -110,13 +104,17 @@ const App = () => {
   useEffect(() => {
     const intervalo1 = setInterval(() => {
       if (dataInicial1) {
-        setContador1(atualizarContador1(dataInicial1));
+        const resultado1 = atualizarContador1(dataInicial1) || "";
+        setContador1(resultado1);
+
       }
     }, 1000);
 
     const intervalo2 = setInterval(() => {
       if (dataInicial2) {
-        setContador2(atualizarContador2(dataInicial2));
+        const resultado2 = atualizarContador2(dataInicial2) || "";
+        setContador2(resultado2);
+
       }
     }, 1000);
 
