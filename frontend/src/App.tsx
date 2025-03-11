@@ -1,16 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import cartaImg from './assets/pictures/carta.png';
 import './assets/styles.css';
-import img_primeiro_oi from './assets/pictures/primeiroOi.png';
-import img_table from './assets/pictures/t.png';
-import img_corredor from './assets/pictures/corredor.png';
-import img_firstDate from './assets/pictures/1_encontro.png';
-import img_firstDate2 from './assets/pictures/1_encontro2.jpg';
-import img_pedido1 from './assets/pictures/pedido1.png';
-import img_pedido2 from './assets/pictures/pedido2.png';
-import img_pedido3 from './assets/pictures/pedido3.png';
-
-
+import images from './assets/images';
 
 interface Evento {
   nome_evento: string;
@@ -76,7 +66,7 @@ const App = () => {
   }
 
   // Função para atualizar o contador
-  function atualizarContador(dataInicial: Date | null) {
+  function atualizarContador1(dataInicial: Date | null) {
     if (!dataInicial) return;
 
     const agora = new Date();
@@ -96,17 +86,37 @@ const App = () => {
     return `${anos} ano(s)<br>${meses} mês(es)<br>${dias} dia(s)<br>${horas} hora(s)<br>${minutos} minuto(s)<br>${segundos} segundo(s)<br> atrás.`;
   }
 
+  function atualizarContador2(dataInicial: Date | null) {
+    if (!dataInicial) return;
+
+    const agora = new Date();
+    let diferencaMs = agora - dataInicial;
+
+    if (diferencaMs < 0) return "A data ainda não chegou!";
+
+    const { anos, meses, dias } = calcularDiferenca(dataInicial, agora);
+    const diasTotais = Math.floor(diferencaMs / (1000 * 60 * 60 * 24));
+    const semanasTotais = Math.floor(diasTotais / 7);
+    const semanas = semanasTotais % 4;
+
+    const horas = Math.floor(diferencaMs / (1000 * 60 * 60)) % 24;
+    const minutos = Math.floor(diferencaMs / (1000 * 60)) % 60;
+    const segundos = Math.floor(diferencaMs / 1000) % 60;
+
+    return `${anos} ano(s)<br>${meses} mês(es)<br>${dias} dia(s)<br>${horas} hora(s)<br>${minutos} minuto(s)<br>${segundos} segundo(s)`;
+  }
+
   // Atualizar o contador a cada segundo
   useEffect(() => {
     const intervalo1 = setInterval(() => {
       if (dataInicial1) {
-        setContador1(atualizarContador(dataInicial1));
+        setContador1(atualizarContador1(dataInicial1));
       }
     }, 1000);
 
     const intervalo2 = setInterval(() => {
       if (dataInicial2) {
-        setContador2(atualizarContador(dataInicial2));
+        setContador2(atualizarContador2(dataInicial2));
       }
     }, 1000);
 
@@ -120,10 +130,10 @@ const App = () => {
   return (
     <div className='divv'>
       <body>
-        <img src={cartaImg} className="carta" />
-        <img src={img_primeiro_oi} className="primeiroOi"></img>
+        <img src={images.carta} className="carta" />
+        <img src={images.primeiroOi} className="primeiroOi"></img>
         <div className="container">
-          <img src={img_table} id="table" />
+          <img src={images.table} id="table" />
           <p id="contador"></p>
         </div>
         <p>No dia <strong>9 de Janeiro de 2025, às 14:46</strong> eu estava no intervalo do trabalho, sentado na calçada da
@@ -132,35 +142,60 @@ const App = () => {
           vidas
           pra sempre.</p>
 
-
         <div className="container_corredor_foto">
-          <img src={img_corredor} className="foto_corredor" />
+          <img src={images.corredor} className="foto_corredor" />
           <p>Nosso ponto de encontro de quando eu trabalhava no shopping </p>
         </div>
 
         <p>Primeiro encontro:</p>
         <div className="_1_encontro">
 
-          <img src={img_firstDate} className="date" />
-          <img src={img_firstDate2} className="date" />
+          <img src={images.firstDate} className="date" />
+          <img src={images.firstDate2} className="date" />
         </div>
 
-
-        <p id='lbl_pedido_namoro'>pedido de namoro:</p>
-        <div className="pedido">
-          <img src={img_pedido1} id="pedidos"/>
-            <img src={img_pedido2} id="pedidos"/>
-              <img src={img_pedido3} id="pedidos"/>
-              </div>
-
-
-              <div id="contador1" dangerouslySetInnerHTML={{ __html: contador1 }}></div>
-              <div id="contador2" dangerouslySetInnerHTML={{ __html: contador2 }}></div>
-
-            </body>
-
+        <div className='secao_pedidos'>
+          <p id='lbl_pedido_namoro'>pedido de namoro:</p>
+          <div className="pedido">
+            <img src={images.pedido1} id="pedidos" />
+            <img src={images.pedido2} id="pedidos" />
+            <img src={images.pedido3} id="pedidos" />
+            <img src={images.desdePedido} id='desdePedido' />
+          </div>
         </div>
-        );
+
+        <div className="container2">
+          <img src={images.table} id="table2" />
+        </div>
+
+        <p>Primeira noite do cinema</p>
+        <div>
+          <img src={images.cine1} className="cinema1" />
+          <img src={images.cine2} className="cinema1" />
+          <img src={images.cine3} className="cinema3" />
+        </div>
+
+        <p>Primeira vez juntos na praia</p>
+        <div>
+          <div id='b1&b2'>
+            <img src={images.beach1} className='beach' />
+            <img src={images.beach2} className='beach' />
+          </div>
+
+          <div id='b3&b4'>
+            <img src={images.beach3} className='beach' />
+            <img src={images.beach4} className='beach' />
+          </div>
+
+          <div id='b5'>
+            <img src={images.beach5} className='beach5' />
+          </div>
+        </div>
+
+        <div id="contador1" dangerouslySetInnerHTML={{ __html: contador1 }}></div>
+        <div id="contador2" dangerouslySetInnerHTML={{ __html: contador2 }}></div>
+      </body>
+    </div>
+  );
 }
-
-        export default App;
+export default App;

@@ -26,7 +26,29 @@ body {
 
 #contador1 {
     font-size: 20px;
+    color: black;
+    transform: translateY(-3475px);
+    font-size: 24px;
 }
+
+#contador2{
+  color: rgb(0, 0, 0);
+  font-size: 24px;
+  transform: translateY(-1880px);  
+}
+
+#table{
+  width: 330px;
+   display: block;   /* Permite usar margin auto */
+   margin: 0 auto;   /* Centraliza horizontalmente */
+   margin-bottom: 100px;
+}
+
+#table2{
+ max-width: 330px;
+}
+
+
 .carta{
     max-width: 500px;
     display: block;   /* Permite usar margin auto */
@@ -49,18 +71,20 @@ p{
     width: 100%;
 }
 
-#table{
-   width: 330px;
-    display: block;   /* Permite usar margin auto */
-    margin: 0 auto;   /* Centraliza horizontalmente */
-    margin-bottom: 100px;
-}
+
 
 .container {
     position: relative; /* Define como referência para elementos filhos */
     display: inline-block; /* Mantém o tamanho da imagem */
     width: 400px; /* Mesmo tamanho da imagem */
     margin: 0 auto; /* Centraliza na tela */
+}
+
+.container2 {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  width: 400px;
 }
 
 #contador {
@@ -75,7 +99,14 @@ p{
 
 ._1_encontro{
     display: inline-block;
-    margin: 0 auto;
+    margin: 0 auto; 
+}
+
+
+#desdePedido{
+  margin: 0 auto;
+  max-width: 250px;
+  display: block;
 }
 
 #lbl_pedido_namoro{
@@ -113,13 +144,22 @@ p{
   margin: 0 auto;
 }
 
-
-
-#contador2{
-  color: rgb(0, 0, 0);
-  font-size: 24px;
-  transform: translateY(-810px);
+.cinema3{
+  max-width: 216px;
+  margin: 0 auto;
 }
+
+.beach{
+  margin: 0 auto;
+  max-width: 250px;
+}
+
+.beach5{
+  margin: 0 auto;
+  max-width: 350px;
+}
+
+
 
 
 

@@ -8,6 +8,14 @@ import pedido1 from './pictures/pedido1.png';
 import pedido2 from './pictures/pedido2.png';
 import pedido3 from './pictures/pedido3.png';
 import desdePedido from './pictures/desdePedido.png';
+import cine1 from './pictures/cinema.png';
+import cine2 from './pictures/cinemaa.png';
+import cine3 from './pictures/cine3.png';
+import beach1 from './pictures/beach1.png';
+import beach2 from './pictures/beach2.png';
+import beach3 from './pictures/beach3.png';
+import beach4 from './pictures/beach4.png';
+import beach5 from './pictures/beach5.png';
 
 const images = {
   carta,
@@ -20,6 +28,14 @@ const images = {
   pedido2,
   pedido3,
   desdePedido,
+  cine1,
+  cine2,
+  cine3,
+  beach1,
+  beach2,
+  beach3,
+  beach4,
+  beach5
 };
 
 export default images;
