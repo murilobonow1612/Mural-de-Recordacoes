@@ -27,14 +27,14 @@ body {
 #contador1 {
     font-size: 20px;
     color: black;
-    transform: translateY(-3475px);
+    transform: translateY(-4175px);
     font-size: 24px;
 }
 
 #contador2{
   color: rgb(0, 0, 0);
   font-size: 24px;
-  transform: translateY(-1880px);  
+  transform: translateY(-2590px);  
 }
 
 #table{
@@ -157,6 +157,11 @@ p{
 .beach5{
   margin: 0 auto;
   max-width: 350px;
+}
+
+.casa{
+  max-width: 200px;
+  margin: 0 auto;
 }
 
 

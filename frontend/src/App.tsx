@@ -18,7 +18,7 @@ const App = () => {
   useEffect(() => {
     const fetchEventos = async () => {
       try {
-        const response = await fetch('http://localhost:5000/eventos');
+        const response = await fetch('http://10.0.0.185:5000/eventos');
         const data: Evento[] = await response.json(); // Especificando que 'data' é um array de Eventos
         console.log('Eventos recebidos:', data); // Log dos dados recebidos
 
@@ -166,18 +166,20 @@ const App = () => {
           <img src={images.table} id="table2" />
         </div>
 
-        <p>Primeira noite do cinema</p>
+        <p>Primeira vez na minha casa</p>
         <div>
-          <img src={images.cine1} className="cinema1" />
-          <img src={images.cine2} className="cinema1" />
-          <img src={images.cine3} className="cinema3" />
+          <img src={images.casa1} className='casa' />
+          <img src={images.casa2} className='casa' />
+          <img src={images.casa3} className='casa' />
+
         </div>
+
+
 
         <p>Primeira vez juntos na praia</p>
         <div>
           <div id='b1&b2'>
             <img src={images.beach1} className='beach' />
-            <img src={images.beach2} className='beach' />
           </div>
 
           <div id='b3&b4'>
@@ -187,6 +189,23 @@ const App = () => {
 
           <div id='b5'>
             <img src={images.beach5} className='beach5' />
+          </div>
+        </div>
+
+        <p>Primeira noite do cinema</p>
+        <div>
+          <div className='cine_row1'>
+            <img src={images.cine1} className="cinema1" />
+            <img src={images.cine2} className="cinema1" />
+            <img src={images.cine3} className="cinema1" />
+          </div>
+          <div className='cine_row2'>
+            <img src={images.cine4} className="cinema1" />
+            <img src={images.cine5} className="cinema1" />
+          </div>
+          <div className='cine_row3'>
+            <img src={images.cine6} className="cinema1" />
+            <img src={images.cine7} className="cinema1" />
           </div>
         </div>
 
